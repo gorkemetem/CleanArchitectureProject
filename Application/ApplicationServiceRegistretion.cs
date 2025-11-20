@@ -12,7 +12,7 @@ public static class ApplicationServiceRegistretion
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        // Add application services here (e.g., MediatR, AutoMapper, etc.)
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         return services;
     }
